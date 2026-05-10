@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>GlowCare - Book Appointment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navbar -->
+<header class="header">
+    <nav class="navbar">
+        <h2 class="logo">GlowCare</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Booking Hero -->
+<section class="booking-hero">
+    <p class="small-title">Reserve Your Experience</p>
+    <h1>Book Your Appointment</h1>
+    <p class="description">Choose your preferred service and time. We will take care of the rest.</p>
+<div class="booking-image">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Clinic">
+
+</div>
+</section>
+
+
+
+<!-- Booking Section -->
+<section class="booking-section">
+
+    <!-- Step Indicators -->
+    <div class="booking-steps">
+        <div class="step active">
+            <div class="step-number">1</div>
+            <p>Choose Service</p>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <p>Pick Date & Time</p>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <p>Your Details</p>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="booking-container">
+
+        <!-- Left: Service Selection -->
+        <div class="booking-services">
+            <p class="section-label">Our Services</p>
+            <h2>Select a Treatment</h2>
+
+            <div class="service-options">
+                <div class="service-option selected" onclick="selectService(this)">
+                    <div class="service-option-icon">✦</div>
+                    <div class="service-option-info">
+                        <h3>Glow Facial</h3>
+                        <p>Deep hydration treatment for fresh and radiant skin.</p>
+                        <span class="service-price">60 min &nbsp;|&nbsp; SAR 350</span>
+                    </div>
+                </div>
+
+                <div class="service-option" onclick="selectService(this)">
+                    <div class="service-option-icon">✦</div>
+                    <div class="service-option-info">
+                        <h3>Skin Analysis</h3>
+                        <p>Personalized skin consultation based on your skin type.</p>
+                        <span class="service-price">45 min &nbsp;|&nbsp; SAR 200</span>
+                    </div>
+                </div>
+
+                <div class="service-option" onclick="selectService(this)">
+                    <div class="service-option-icon">✦</div>
+                    <div class="service-option-info">
+                        <h3>Laser Session</h3>
+                        <p>Advanced beauty treatment with professional care.</p>
+                        <span class="service-price">90 min &nbsp;|&nbsp; SAR 600</span>
+                    </div>
+                </div>
+
+                <div class="service-option" onclick="selectService(this)">
+                    <div class="service-option-icon">✦</div>
+                    <div class="service-option-info">
+                        <h3>Hydra Boost</h3>
+                        <p>Intensive moisture therapy for dry and sensitive skin.</p>
+                        <span class="service-price">50 min &nbsp;|&nbsp; SAR 280</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="booking-form-card">
+            <p class="section-label">Your Details</p>
+            <h2>Complete Your Booking</h2>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g. Sara Al-Rashidi" />
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+966 5X XXX XXXX" />
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="sara@email.com" />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" />
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time</label>
+                    <select>
+                        <option value="">Select time</option>
+                        <option>10:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>12:00 PM</option>
+                        <option>1:00 PM</option>
+                        <option>2:00 PM</option>
+                        <option>3:00 PM</option>
+                        <option>4:00 PM</option>
+                        <option>5:00 PM</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Special Requests (optional)</label>
+                <textarea placeholder="Any skin concerns or preferences we should know about..."></textarea>
+            </div>
+
+            <button onclick="confirmBooking()">Confirm Appointment</button>
+
+            <!-- Confirmation Message (hidden by default) -->
+            <div class="confirm-message" id="confirmMsg">
+                ✦ &nbsp; Your appointment has been received! We will contact you shortly to confirm.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Why Book With Us -->
+<section class="booking-why">
+    <p class="section-label">Why GlowCare</p>
+    <h2>The GlowCare Promise</h2>
+
+    <div class="cards-container">
+        <div class="service-card">
+            <div class="why-icon">🌿</div>
+            <h3>Expert Specialists</h3>
+            <p>Our certified skincare professionals bring years of experience to every treatment.</p>
+        </div>
+        <div class="service-card">
+            <div class="why-icon">✨</div>
+            <h3>Premium Products</h3>
+            <p>We use only the finest, dermatologist-approved products for your skin.</p>
+        </div>
+        <div class="service-card">
+            <div class="why-icon">🕊️</div>
+            <h3>Serene Environment</h3>
+            <p>A calm and luxurious space designed for your total relaxation and comfort.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <h2>GlowCare</h2>
+    <p>Luxury Beauty & Skincare Clinic</p>
+    <p class="footer-text">© 2026 GlowCare. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+
+
+
+```
+
+</body>
+</html>
